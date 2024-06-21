@@ -3,6 +3,7 @@ package com.rcm.api.pagamentos.controller;
 import com.rcm.api.pagamentos.controller.dto.CreatePagamentoDto;
 import com.rcm.api.pagamentos.entity.Wallet;
 import com.rcm.api.pagamentos.service.PagamentoService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,7 +21,7 @@ public class PagamentoController {
     }
 
     @PostMapping("/pagamentos")
-    public ResponseEntity<Wallet> createPagamento(@RequestBody CreatePagamentoDto dto) {
+    public ResponseEntity<Wallet> createPagamento(@RequestBody @Valid CreatePagamentoDto dto) {
         var wallet = pagamentoService.createWallet(dto);
         return ResponseEntity.ok(wallet);
     }
