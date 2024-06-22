@@ -6,7 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @FeignClient(
-        url = "${client.notification-service.url}" // application.properties
+        name = "AuthorizationClient",
+        url = "${client.authorization-service.url}" // application.properties
 )
 public interface AuthorizationClient {
 
