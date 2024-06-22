@@ -17,7 +17,6 @@ public class Wallet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     @Column(name = "nome_completo", length = 80)
     private String NomeCompleto;
     @Column(name = "cpf_cnpj", unique = true)
