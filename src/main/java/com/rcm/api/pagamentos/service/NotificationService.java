@@ -20,16 +20,16 @@ public class NotificationService {
     public void sendNotification(Transfer transfer) {
 
         try {
-            logger.info("Sending notification...");
+            logger.info("Enviando notificação..");
 
             var resp = notificationClient.sendNotification(transfer);
 
             if (resp.getStatusCode().isError()) {
-                logger.error("Error while sending notification, status code is not OK");
+                logger.error("Erro ao enviar a notificação, status code não está OK");
             }
 
         } catch (Exception e) {
-            logger.error("Error while sending notification", e);
+            logger.error("Error ao enviar a notificação", e);
         }
     }
 }
